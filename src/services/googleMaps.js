@@ -29,7 +29,8 @@ export const getAddressData = async address => {
 }
 
 export const addLocationDataToTeamMember = async teamMember => {
-	const addressData = await getAddressData(teamMember.location);
+	const cityAndCountry = `${teamMember.location_city},${teamMember.location_country}`;
+	const addressData = await getAddressData(cityAndCountry);
 	return {
 		...teamMember,
 		location: addressData[0],
@@ -37,7 +38,7 @@ export const addLocationDataToTeamMember = async teamMember => {
 }
 
 export const getAddressesForMapView = async teamMembers => {
-	const filteredTeamMembers = teamMembers.filter(item => !!item.location);
+	const filteredTeamMembers = teamMembers.filter(item => !!item.location_city);
 	const results = await Promise.all(filteredTeamMembers.map(member => {
 		return addLocationDataToTeamMember(member);
 	}));

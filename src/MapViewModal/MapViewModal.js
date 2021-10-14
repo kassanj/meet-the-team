@@ -1,29 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './MapViewModal.css';
+import '../Home.css';
 
 const MapViewModal = ({ teamMember, showModal, hideModal }) => {
 	return (
 		<div className='map-modal-bg'>
-		<div className={`text-center map-modal map-modal-${showModal ? 'open' : 'closed'}`}>
-			<div className='card'>
-				<div className='card-body map-modal-body mt-3'>
+			<div className={`map-modal map-modal-${showModal ? 'open' : 'closed'}`}>
+			<div className='map-modal-body'>
+				<div className='card'>
+				<div className='card-content'>
+					<div className='card-body mt-3'>
+						<div className="profile">
+              <img src={teamMember.avatar_url} />
+              </div>
+              <div className="card-title mt-2">
+  	            <div className="profile-name">{teamMember.name}</div>
+                <div className="profile-details-container">
+                  <div className="profile-details">{teamMember.location?.display}</div>
+                  <div className="profile-details">{teamMember.role}</div>
+                  <div className="profile-details">{teamMember.pronouns}</div>
+                </div>
+              </div>
 
-							<div className='mt-5'>
-								<img src={teamMember.image} alt={teamMember.name} className='map-modal-image' />
-							</div>
-
-							<div className='my-3'>
-								<p className='display-5'>{teamMember.name}</p>
-							</div>
-
-							<p className='h5'>{teamMember.location?.display}</p>
-							<p className='h5'>{teamMember.pronouns}</p>
-
-							<p className='h4 my-3'>{teamMember.role}</p>
+              <div className="ml-5 card-subtitle mb-3">
+                <div className="profile-sub-details">Started: 8/20</div>
+                <div className="profile-sub-details">Birthday: Jan 4</div>
+              </div>
 
 							<button className='btn btn-danger mb-0' onClick={hideModal}>Close</button>
 				</div>
+			</div>
+			</div>
 			</div>
 		</div>
 		</div>
