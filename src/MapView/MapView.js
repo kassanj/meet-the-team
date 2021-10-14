@@ -3,17 +3,9 @@ import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
 import './MapView.css';
 
-// const GOOGLE_MAPS_API_KEY = 'AIzaSyDpomrdhlhMJsurmyNO4VeKep9cH-UrE98';
-
 const TestText = ({ text }) => <div>{text}</div>;
 
 const MapView = (props) => {
-	const defaultCenter = {
-		lat: 40.7128,
-		lng: -74.0060,
-	}
-	const defaultZoom = 11;
-
   return (
 		<>
        <h1>
@@ -22,8 +14,8 @@ const MapView = (props) => {
 			<div className='map-container'>
 				<GoogleMapReact
 					bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_KEY }}
-					defaultCenter={defaultCenter}
-					defaultZoom={props.zoom || defaultZoom}
+					defaultCenter={props.center}
+					defaultZoom={props.zoom}
 				>
 					<TestText
 						lat={39.9526}
@@ -45,8 +37,11 @@ MapView.propTypes = {
 }
 
 MapView.defaultProps = {
-	center: {},
-	zoom: 0,
+	center: {
+		lat: 40.7128,
+		lng: -74.0060,
+	},
+	zoom: 5,
 }
 
 export default MapView;
