@@ -1,4 +1,4 @@
-import './App.css';
+
 import { Link, withRouter } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './Home.js';
@@ -13,9 +13,9 @@ const App = () => {
     <Router>
       <Navigation />
       <Switch>
-        <Route path="/" exact component={() => <Home />} />
-        <Route path="/list" exact component={() => <ListView />} />
-        <Route path="/map" exact component={() => <MapView />} />
+        <Route path='/' exact component={() => <Home />} />
+        <Route path='/list' exact component={() => <ListView />} />
+        <Route path='/map' exact component={() => <MapView />} />
       </Switch>
     </Router>
   );

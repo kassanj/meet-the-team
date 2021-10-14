@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'HKGroteskRegular';
+    src: local('HKGroteskRegular'),
+    url('./fonts/HKGrotesk/HKGrotesk-Regular.otf');
+    font-weight: bold;
+  }
+
+.navbar-expand {
+    justify-content: flex-end !important;
+    padding-right: 80px !important;
+    font-family: 'HKGroteskRegular' !important;
+    
+}
+
+a {
+    color: #000  !important;
+}

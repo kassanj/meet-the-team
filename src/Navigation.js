@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import './Navigation.css';
 
-function Navigation(props) {
+const Navigation = (props) => {
     return (
         <div className="navigation">
             <nav class="navbar navbar-expand">
@@ -15,7 +16,7 @@ function Navigation(props) {
 
                         <li class={`nav-item  ${props.location.pathname === "/list" ? "active" : ""}`}>
                             <Link class="nav-link" to="/list">
-                                List
+                                Directory
                             </Link>
                         </li>
                         <li class={`nav-item  ${props.location.pathname === "/map" ? "active" : ""}`}>
