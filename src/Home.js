@@ -41,7 +41,6 @@ const Home = () => {
 
     return (
         <>
-
             <div className="page-title-container">
                 <div className="page-logo">
                     <FlowerPerson />

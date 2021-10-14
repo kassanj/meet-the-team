@@ -13,6 +13,7 @@ const ListView = () => {
     });
 
     let profiles = team.map((teammate) => {
+
         return (
             <div className="card col-md-3 mt-100">
                 <div className="card-content">
