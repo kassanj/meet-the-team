@@ -2,7 +2,7 @@ const baseGoogleMapsUrl = 'https://maps.googleapis.com/maps/api/geocode/json?';
 
 const buildURL = address => {
 	const formattedAddress = encodeURIComponent(address);
-	return `${baseGoogleMapsUrl}address=${formattedAddress}&address=New+York,NY&key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}`;
+	return `${baseGoogleMapsUrl}address=${formattedAddress}&key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}`;
 }
 
 export const getLocation = async address => {
