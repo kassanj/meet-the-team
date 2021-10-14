@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
+import MapViewModal from '../MapViewModal';
 import { team } from '../dummyData';
 import { getAddressData, getAddressesForMapView } from '../services/googleMaps';
 import './MapView.css';
 
 const TestText = ({ text }) => <div>{text}</div>;
 
-const TeamMemberAvatar = ({ image, name }) => {
-	return <img className='team-member-avatar' src={image} alt={name} />;
+const TeamMemberAvatar = ({ teamMember, handleClick }) => {
+	const { image, name } = teamMember;
+	return (
+		<img
+			className='team-member-avatar'
+			src={image}
+			alt={name}
+			onClick={() => handleClick(teamMember)}
+		/>
+	);
 }
 
 const MapView = (props) => {
 	const [teamMembers, setTeamMembers] = useState([]);
 	const [error, setError] = useState(false);
+	const [selectedMember, setSelectedMember] = useState({});
+	const [showModal, setShowModal] = useState(false);
 	
 	useEffect(() => {
 		const getAddress = async () => {
@@ -29,11 +40,20 @@ const MapView = (props) => {
 		getAddress();
 	}, []);
 
-	console.log(teamMembers);
+	useEffect(() => {
+		if (selectedMember.name) {
+			setShowModal(true);
+		}
+	}, [selectedMember]);
+
+	const handleAvatarClick = teamMember => {
+		setSelectedMember(teamMember);
+	}
 
   return (
 		<>
       <h1 className='display-1 text-center my-3'>Team Member Map</h1>
+			<MapViewModal teamMember={selectedMember} showModal={showModal} hideModal={() => setShowModal(false)}/>
 			{error && <h2 className='text-danger text-center my-3'>Error: { error }</h2>}
 			<div className='map-container'>
 				<GoogleMapReact
@@ -45,14 +65,15 @@ const MapView = (props) => {
 						return (
 							<TeamMemberAvatar
 								key={`avatar_${i}`}
-								image={teamMember.image}
-								name={teamMember.name}
+								teamMember={teamMember}
 								lat={teamMember.location.lat}
 								lng={teamMember.location.lng}
+								handleClick={handleAvatarClick}
 							/>
 						);
 					})}
 				</GoogleMapReact>
+				
 			</div>
 		</>
   );

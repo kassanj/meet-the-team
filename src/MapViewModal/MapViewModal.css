@@ -1,0 +1,29 @@
+.map-modal-bg {
+	width: 100%;
+	height: 100%;
+}
+
+.map-modal {
+	position: absolute;
+	margin-left: auto;
+	margin-top: auto;
+}
+
+.map-modal-closed {
+	visibility: hidden;
+	z-index: -1;
+}
+
+.map-modal-open {
+	visibility: visible;
+	z-index: 2000;
+}
+
+.map-modal-body {
+	width: 35em;
+}
+
+.map-modal-image {
+	border-radius: 50%;
+	width: 8em;
+}
