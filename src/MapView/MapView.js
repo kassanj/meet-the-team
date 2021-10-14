@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
 import './MapView.css';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyDpomrdhlhMJsurmyNO4VeKep9cH-UrE98';
+// const GOOGLE_MAPS_API_KEY = 'AIzaSyDpomrdhlhMJsurmyNO4VeKep9cH-UrE98';
 
 const TestText = ({ text }) => <div>{text}</div>;
 
@@ -21,7 +21,7 @@ const MapView = (props) => {
        </h1>
 			<div className='map-container'>
 				<GoogleMapReact
-					bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
+					bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_KEY }}
 					defaultCenter={defaultCenter}
 					defaultZoom={props.zoom || defaultZoom}
 				>
