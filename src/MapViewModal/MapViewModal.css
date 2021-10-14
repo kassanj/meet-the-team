@@ -1,0 +1,22 @@
+.map-modal {
+	position: absolute;
+}
+
+.map-modal-closed {
+	visibility: hidden;
+	z-index: -1;
+}
+
+.map-modal-open {
+	visibility: visible;
+	z-index: 2000;
+}
+
+.map-modal-body {
+	width: 20em;
+	margin-left: 30px !important;
+}
+
+.map-modal-button {
+	font-family: 'HKGroteskLight', sans-serif;
+}
