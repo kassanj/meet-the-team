@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
 import MapViewModal from '../MapViewModal';
 import { useTeamList } from '../lib/useTeamList'
-import { getAddressData, getAddressesForMapView } from '../services/googleMaps';
+import { getAddressesForMapView } from '../services/googleMaps';
 import './MapView.css';
-
-const TestText = ({ text }) => <div>{text}</div>;
 
 const TeamMemberAvatar = ({ teamMember, handleClick }) => {
 	const { avatar_url, first_name, last_name } = teamMember;
