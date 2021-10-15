@@ -4,9 +4,11 @@ import { useTeamList } from './lib/useTeamList'
 import Modal from './Modal.js';
 import Life from './svgs/Life.js';
 import CareNavigator from './svgs/CareNavigator.js';
+import Therapy from './svgs/Therapy.js';
 import Divider from './svgs/Divider.js';
 import linkedInLogo from './assets/linkedin-icon.png';
 import hero from './assets/hero.png';
+import Profile from './Profile';
 
 const Home = () => {
     const team = useTeamList();
@@ -14,72 +16,20 @@ const Home = () => {
     const [selectedTeamMember, setSelectedTeamMember] = useState({});
 
     let careGivers = team.filter(teammate => teammate.group === "Caregiver Experience Pod");
-    let leadership = team.filter(teammate => teammate.group === 'Leadership')
+    let leadership = team.filter(teammate => teammate.group === 'Leadership');
+		let growth = team.filter(teammate => teammate.group === 'Growth Pod');
 
-    let profiles = careGivers.map((teammate) => {
-        return (
-            <div className="card col-md-3 mt-100">
-                <div className="card-content">
-                    <div className="card-body">
-                        <div className="profile">
-                            <img src={teammate.avatar_url} />
-                        </div>
-                        <div className="card-title mt-2">
-                            <div className="profile-name">{teammate.name}</div>
-                            <div className="profile-details-container">
-                                <div className="profile-details">{teammate.location}</div>
-                                <div className="profile-details">{teammate.role}</div>
-                                <div className="profile-details">{teammate.pronouns}</div>
-                            </div>
-                        </div>
-
-                        <div className="more-actions">
-                            <div className="card-subtitle">
-                                <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
-                                <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
-                            </div>
-                            <div className="linkedin-logo">
-                                <img src={linkedInLogo} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
+    let caregiverTeammates = careGivers.map((teammate, i) => {
+        return <Profile teammate={teammate} key={`cg_${i}`} />;
     });
 
-    let profiles2 = leadership.map((teammate) => {
-        return (
-            <div className="card col-md-3 mt-100">
-                <div className="card-content">
-                    <div className="card-body">
-                        <div className="profile">
-                            <img src={teammate.avatar_url} />
-                        </div>
-                        <div className="card-title mt-2">
-                            <div className="profile-name">{teammate.name}</div>
-                            <div className="profile-details-container">
-                                <div className="profile-details">{teammate.location}</div>
-                                <div className="profile-details">{teammate.role}</div>
-                                <div className="profile-details">{teammate.pronouns}</div>
-                            </div>
-                        </div>
-
-                        <div className="more-actions">
-                            <div className="card-subtitle">
-                                <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
-                                <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
-                            </div>
-                            <div className="linkedin-logo">
-                                <img src={linkedInLogo} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
+    let leadershipTeammates = leadership.map((teammate, i) => {
+        return <Profile teammate={teammate} key={`ls_${i}`} />;
     });
 
+		let growthTeammates = growth.map((teammate, i) => {
+        return <Profile teammate={teammate} key={`ls_${i}`} />;
+    });
 
     return (
         <>
@@ -97,13 +47,13 @@ const Home = () => {
                     <div className="title">
                         <span><span className="pod-logo"><Life /></span>Product Leadership</span>
                     </div>
-                    <p>They aren’t just great judges, they’re people too. But really, where would we be without our leaders. This text should in no way influence who our judges choose is the winner of this hackothon, right!?</p>
+                    <p>They aren’t just great judges, they’re people too. But really, where would we be without our leaders. This text should in no way influence who our judges choose as the winner of this hackathon, right!?</p>
                     <div className="divider">
                         <Divider />
                     </div>
                 </div>
                 <div className="row justify-content-center pb-5">
-                    {profiles2}
+                    {leadershipTeammates}
                 </div>
             </div>
 
@@ -119,7 +69,23 @@ const Home = () => {
                 </div>
 
                 <div className="row justify-content-center pb-5">
-                    {profiles}
+                    {caregiverTeammates}
+                </div>
+            </div>
+
+						<div className='container mx-auto mt-8 col-md-10 mt-50'>
+                <div className="header">
+                    <div className="title">
+                        <span><span className="pod-logo"><Therapy /></span>Growth Pod</span>
+                    </div>
+                    <p>The Growth Pod is focused on building tools to expand our outreach, improve customer experience, and impact the greatest number of lives possible.</p>
+                    <div className="divider">
+                        <Divider />
+                    </div>
+                </div>
+
+                <div className="row justify-content-center pb-5">
+                    {growthTeammates}
                 </div>
             </div>
 
