@@ -3,6 +3,7 @@ import './ListView.css';
 import Modal from './Modal.js';
 import { useTeamList } from './lib/useTeamList';
 import Divider from './svgs/Divider.js';
+import linkedInLogo from './assets/linkedin-icon.png';
 
 const ListView = () => {
 
@@ -56,15 +57,20 @@ const ListView = () => {
                             <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
                         </div>
 
-                        <div className="card-action">
-                            <a
-                                className="cta-link"
-                                onClick={() => {
-                                    setShow(true);
-                                    setSelectedTeamMember(teammate);
-                                }}>
-                                See More +
+                        <div className="more-actions">
+                            <div className="card-action">
+                                <a
+                                    className="cta-link"
+                                    onClick={() => {
+                                        setShow(true);
+                                        setSelectedTeamMember(teammate);
+                                    }}>
+                                    See More +
                             </a>
+                            </div>
+                            <div className="linkedin-logo">
+                                <img src={linkedInLogo} />
+                            </div>
                         </div>
                     </div>
                 </div>

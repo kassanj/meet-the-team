@@ -14,8 +14,8 @@ const Home = () => {
     const [show, setShow] = useState(false);
     const [selectedTeamMember, setSelectedTeamMember] = useState({});
 
-    let careGivers = team.filter(teammate => teammate.Group === "Caregiver Experience Pod");
-    let leadership = team.filter(teammate => teammate.Group === 'Leadership')
+    let careGivers = team.filter(teammate => teammate.group === "Caregiver Experience Pod");
+    let leadership = team.filter(teammate => teammate.group === 'Leadership')
 
     let profiles = careGivers.map((teammate) => {
         return (
@@ -107,7 +107,7 @@ const Home = () => {
     return (
         <>
 
-            <div className='page-title-container mx-auto mt-8  col-lg-9 col-md-10'>
+            <div className='page-title-container mx-auto mt-8 col-md-10'>
                 <div className="page-image col-md-6" >
                     <img src={hero} />
                 </div>
