@@ -20,7 +20,7 @@
     font-size: 21px;
     font-weight: 700;
     color: black;
-    font-family: 'HKGroteskBold', sans-serif;
+    font-family: 'HKGroteskBold', sans-serif !important;
   }
   
   .title {

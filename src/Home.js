@@ -7,7 +7,6 @@ import CareNavigator from './svgs/CareNavigator.js';
 import Divider from './svgs/Divider.js';
 import linkedInLogo from './assets/linkedin-icon.png';
 import hero from './assets/hero.png';
-import './fonts/HKGrotesk/HKGrotesk-Bold.otf';
 
 const Home = () => {
     const team = useTeamList();
@@ -106,7 +105,6 @@ const Home = () => {
 
     return (
         <>
-
             <div className='page-title-container mx-auto mt-8 col-md-10'>
                 <div className="page-image col-md-6" >
                     <img src={hero} />

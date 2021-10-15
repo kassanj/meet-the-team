@@ -13,9 +13,9 @@
 }
 
 @font-face {
-  font-family: 'HKGroteskRegular';
-  src: local('HKGroteskRegular'),
-  url('./fonts/HKGrotesk/HKGrotesk-Regular.otf');
+  font-family: 'HKGroteskBold';
+  src: local('HKGroteskBold'),
+  url('./fonts/HKGrotesk/HKGrotesk-Bold.otf');
   font-weight: bold;
 }
 
