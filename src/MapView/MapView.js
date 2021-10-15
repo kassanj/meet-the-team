@@ -73,8 +73,8 @@ const MapView = (props) => {
 							<TeamMemberAvatar
 								key={`avatar_${i}`}
 								teamMember={teamMember}
-								lat={teamMember.location.lat}
-								lng={teamMember.location.lng}
+								lat={teamMember.location?.lat}
+								lng={teamMember.location?.lng}
 								handleClick={handleAvatarClick}
 							/>
 						);
