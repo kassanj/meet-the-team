@@ -45,12 +45,18 @@
     font-family: 'HKGroteskBold', sans-serif;
   }
   
-  .title {
-    font-size: 42px;
+  .searchbar {
+    padding-right: 12px;
+    font-size: 32px;
     font-weight: 400;
     color: #37837C;
     font-family: 'HKGroteskLight', sans-serif;
     margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .searchbar span {
+    padding-right: 12px;
   }
 
   .title-container {
@@ -58,12 +64,6 @@
     justify-content: flex-start;
     align-items: center;
   }
-
-  .pod-logo svg {
-    vertical-align: initial !important;
-    max-width: 50px !important;
-    padding-left: 4px;
-   }
   
   .icon {
     position: relative;
@@ -106,18 +106,18 @@
     padding: 40px 58px 0 58px;
   }
   
-  .linkedin-logo img { 
+  /* .linkedin-logo img { 
     margin-top: 16px;
     max-width: 50px;
-  }
+  } */
 
-   .page-title-container {
+   .page-title-container-list {
      margin-top: 24px;
      text-align: center;
    }
 
-   .page-title {
-      font-family: 'HKGroteskBold', sans-serif;
+   .page-title-list {
+      font-family: 'HKGroteskLight', sans-serif;
       color: #068464;
       font-size: 42px;
       font-weight: 600;

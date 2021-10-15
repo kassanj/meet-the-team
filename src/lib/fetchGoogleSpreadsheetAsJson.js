@@ -19,7 +19,7 @@ function joinRowAndLabels(row, labels) {
   return labels.reduce((acc, label, i) => {
     acc[label] = row[i]
     return acc
-  } , {})
+  }, {})
 }
 
 function joinDataWithLables(data, labels) {

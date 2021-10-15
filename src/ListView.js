@@ -1,19 +1,41 @@
+import React, { useState } from "react";
 import './ListView.css';
+import Modal from './Modal.js';
 import './fonts/HKGrotesk/HKGrotesk-Bold.otf';
 import { useTeamList } from './lib/useTeamList';
+import Divider from './svgs/Divider.js';
 
 const ListView = () => {
-    const team = useTeamList()
 
-    team.sort((a, b) => {
-        if (a === b) {
-            return 0;
-        }
-        return a.name < b.name ? -1 : 1;
-    });
+    const team = useTeamList();
+    const [show, setShow] = useState(false);
+    const [selectedTeamMember, setSelectedTeamMember] = useState({});
+    const [searchTerm, setSearchTerm] = React.useState('');
+    const [searchResults, setSearchResults] = React.useState([]);
 
-    let profiles = team.map((teammate) => {
+    React.useEffect(() => {
+        team.sort((a, b) => {
+            if (a === b) {
+                return 0;
+            }
+            return a.name < b.name ? -1 : 1;
+        });
 
+        setSearchResults(team);
+    }, [team])
+
+    React.useEffect(() => {
+        const results = team.filter(person =>
+            person.name.toLowerCase().includes(searchTerm)
+        );
+        setSearchResults(results);
+    }, [searchTerm]);
+
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    let profiles = searchResults.map((teammate) => {
         return (
             <div className="card col-md-3 mt-100">
                 <div className="card-content">
@@ -36,7 +58,14 @@ const ListView = () => {
                         </div>
 
                         <div className="card-action">
-                            <div className="cta-link">See More +</div>
+                            <a
+                                className="cta-link"
+                                onClick={() => {
+                                    setShow(true);
+                                    setSelectedTeamMember(teammate);
+                                }}>
+                                See More +
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -44,24 +73,28 @@ const ListView = () => {
         )
     });
 
-
     return (
         <>
-            <div className="page-title-container">
-                <div className="page-title">
-                    Directory
-               </div>
+            <div className="page-title-container-list mx-auto mt-8 col-md-10">
+                <div className="searchbar">
+                    <span>Search</span>
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={handleChange}
+                    />
+                </div>
             </div>
             <div className='container mx-auto mt-8 col-md-10 mt-50'>
                 <div className="header">
-                    <div className="title">
-                        <span>Search</span>
-                    </div>
+                    <p>Explore team members by name, specialty, or interest</p>
+                    <div><Divider /></div>
                 </div>
                 <div className="row justify-content-center pb-5">
                     {profiles}
                 </div>
             </div>
+            <Modal onClose={() => setShow(false)} show={show} teamMember={selectedTeamMember} />
         </>
     );
 }
