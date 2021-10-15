@@ -28,7 +28,7 @@ const MapViewModal = ({ teamMember, showModal, hideModal }) => {
 									<div className="profile-sub-details">Birthday: {teamMember.date_of_birth}</div>
 								</div>
 
-								<button className='btn btn-secondary mb-0' onClick={hideModal}>Close</button>
+								<button className='btn map-modal-button mb-0' onClick={hideModal}>Close</button>
 							</div>
 						</div>
 					</div>

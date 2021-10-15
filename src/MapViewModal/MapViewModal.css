@@ -18,5 +18,7 @@
 }
 
 .map-modal-button {
-	font-family: 'HKGroteskLight', sans-serif;
+	font-family: 'HKGroteskBold', sans-serif;
+	background-color: #068464 !important;
+	color: white !important;
 }
