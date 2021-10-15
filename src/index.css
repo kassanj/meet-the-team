@@ -5,6 +5,20 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'HKGroteskLight';
+  src: local('HKGroteskLight'),
+  url('./fonts/HKGrotesk/HKGrotesk-Light.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'HKGroteskRegular';
+  src: local('HKGroteskRegular'),
+  url('./fonts/HKGrotesk/HKGrotesk-Regular.otf');
+  font-weight: bold;
+}
+
 body {
   margin: 0;
   font-family: 'HKGroteskRegular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

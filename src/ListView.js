@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './ListView.css';
 import Modal from './Modal.js';
-import './fonts/HKGrotesk/HKGrotesk-Bold.otf';
 import { useTeamList } from './lib/useTeamList';
 import Divider from './svgs/Divider.js';
 

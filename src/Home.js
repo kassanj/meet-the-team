@@ -39,15 +39,20 @@ const Home = () => {
                             <div className="profile-sub-details">Birthday: Jan 4</div>
                         </div>
 
-                        <div className="card-action">
-                            <a
-                                className="cta-link"
-                                onClick={() => {
-                                    setShow(true);
-                                    setSelectedTeamMember(teammate);
-                                }}>
-                                See More +
+                        <div className="more-actions">
+                            <div className="card-action">
+                                <a
+                                    className="cta-link"
+                                    onClick={() => {
+                                        setShow(true);
+                                        setSelectedTeamMember(teammate);
+                                    }}>
+                                    See More +
                             </a>
+                            </div>
+                            <div className="linkedin-logo">
+                                <img src={linkedInLogo} />
+                            </div>
                         </div>
                     </div>
                 </div>

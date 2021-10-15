@@ -1,17 +1,19 @@
-@font-face {
-    font-family: 'HKGroteskRegular';
-    src: local('HKGroteskRegular'),
-    url('./fonts/HKGrotesk/HKGrotesk-Regular.otf');
-    font-weight: bold;
-  }
-
 .navbar-expand {
     justify-content: flex-end !important;
     padding-right: 80px !important;
-    font-family: 'HKGroteskRegular' !important;
-    
+    /* font-family: 'HKGroteskRegular', sans-serif !important;   */
 }
 
 a {
     color: #000  !important;
+}
+
+.nav-link {
+    font-family: 'HKGroteskRegular', sans-serif !important;
+}
+
+.browse-text {
+    color: black !important;
+    font-weight: 700 !important;
+    font-family: 'HKGroteskBold', sans-serif !important;  
 }
