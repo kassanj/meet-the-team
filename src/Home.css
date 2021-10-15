@@ -87,7 +87,7 @@
   .more-actions {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
   }
   
   .linkedin-logo img { 

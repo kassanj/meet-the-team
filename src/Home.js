@@ -33,21 +33,10 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="card-subtitle">
-                            <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
-                            <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
-                        </div>
-
                         <div className="more-actions">
-                            <div className="card-action">
-                                <a
-                                    className="cta-link"
-                                    onClick={() => {
-                                        setShow(true);
-                                        setSelectedTeamMember(teammate);
-                                    }}>
-                                    See More +
-                            </a>
+                            <div className="card-subtitle">
+                                <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
+                                <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
                             </div>
                             <div className="linkedin-logo">
                                 <img src={linkedInLogo} />
@@ -76,21 +65,10 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="card-subtitle">
-                            <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
-                            <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
-                        </div>
-
                         <div className="more-actions">
-                            <div className="card-action">
-                                <a
-                                    className="cta-link"
-                                    onClick={() => {
-                                        setShow(true);
-                                        setSelectedTeamMember(teammate);
-                                    }}>
-                                    See More +
-                            </a>
+                            <div className="card-subtitle">
+                                <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
+                                <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
                             </div>
                             <div className="linkedin-logo">
                                 <img src={linkedInLogo} />

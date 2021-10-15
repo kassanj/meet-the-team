@@ -140,19 +140,20 @@
    }
 
    .specialties, .interests {
+     font-weight: 700 !important;
      border-left: solid #B4B9BB 1.5px;
      margin: 20px;
    }
 
    .specialties-container, .interests-container {
      padding: 16px 28px 8px;
-     font-weight: 700;
+     font-weight: 700 !important;
      font-size: 12px;
    }
 
    .specialties-tag-container, .interests-tag-container {
       padding: 6px 16px;
-      font-weight: 700;
+      font-weight: 700 !important;
       font-size: 12px;
     }
 
@@ -162,6 +163,8 @@
      padding: 8px 12px;
      margin: 12px 0px 12px 12px;
      border-radius: 5px;
+     font-weight: 700 !important;
+     font-family: 'HKGroteskBold', sans-serif !important;
    }
 
    .interest-tag {
@@ -170,4 +173,6 @@
     padding: 8px 12px;
     margin: 12px 0px 12px 12px;
     border-radius: 5px;
+    font-weight: 700 !important;
+    font-family: 'HKGroteskBold', sans-serif !important;
   }
