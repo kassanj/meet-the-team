@@ -101,7 +101,7 @@ MapView.defaultProps = {
 		lat: 40.7128,
 		lng: -74.0060,
 	},
-	zoom: 5,
+	zoom: 1,
 }
 
 export default MapView;
