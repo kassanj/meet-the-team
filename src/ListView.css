@@ -130,3 +130,7 @@
     font-family: 'HKGroteskBold', sans-serif;
     color: #068464;
    }
+
+   .focus-visible {
+    border-color: #068464 !important;
+   }

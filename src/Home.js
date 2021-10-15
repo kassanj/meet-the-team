@@ -35,8 +35,8 @@ const Home = () => {
                         </div>
 
                         <div className="card-subtitle">
-                            <div className="profile-sub-details">Started: 8/20</div>
-                            <div className="profile-sub-details">Birthday: Jan 4</div>
+                            <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
+                            <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
                         </div>
 
                         <div className="more-actions">
@@ -78,8 +78,8 @@ const Home = () => {
                         </div>
 
                         <div className="card-subtitle">
-                            <div className="profile-sub-details">Started: 8/20</div>
-                            <div className="profile-sub-details">Birthday: Jan 4</div>
+                            <div className="profile-sub-details">Started: {teammate.date_of_admission}</div>
+                            <div className="profile-sub-details">Birthday: {teammate.date_of_birth}</div>
                         </div>
 
                         <div className="more-actions">

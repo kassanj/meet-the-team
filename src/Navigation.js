@@ -16,7 +16,7 @@ const Navigation = (props) => {
                         </li>
                         <li className={`nav-item  ${props.location.pathname === "/" ? "active" : ""}`}>
                             <Link class="nav-link" to="/">
-                                Pod
+                                Teams
                             </Link>
                         </li>
 

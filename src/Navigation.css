@@ -1,7 +1,6 @@
 .navbar-expand {
     justify-content: flex-end !important;
     padding-right: 80px !important;
-    /* font-family: 'HKGroteskRegular', sans-serif !important;   */
 }
 
 a {
@@ -12,7 +11,7 @@ a {
     font-family: 'HKGroteskRegular', sans-serif !important;
 }
 
-.browse-text {
+.navbar-expand .navbar-nav .browse-text {
     color: black !important;
     font-weight: 700 !important;
     font-family: 'HKGroteskBold', sans-serif !important;  
