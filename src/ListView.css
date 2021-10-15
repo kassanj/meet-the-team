@@ -134,3 +134,40 @@
    .focus-visible {
     border-color: #068464 !important;
    }
+
+   .card-content {
+    display: flex;
+   }
+
+   .specialties, .interests {
+     border-left: solid #B4B9BB 1.5px;
+     margin: 20px;
+   }
+
+   .specialties-container, .interests-container {
+     padding: 16px 28px 8px;
+     font-weight: 700;
+     font-size: 12px;
+   }
+
+   .specialties-tag-container, .interests-tag-container {
+      padding: 6px 16px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+   .specialty-tag {
+     background-color: #87EFD5;
+     color: #33534C;
+     padding: 8px 12px;
+     margin: 12px 0px 12px 12px;
+     border-radius: 5px;
+   }
+
+   .interest-tag {
+    background-color: #FCD4CE;
+    color: #33534C;
+    padding: 8px 12px;
+    margin: 12px 0px 12px 12px;
+    border-radius: 5px;
+  }

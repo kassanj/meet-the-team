@@ -37,9 +37,9 @@ const ListView = () => {
 
     let profiles = searchResults.map((teammate) => {
         return (
-            <div className="card col-md-3 mt-100">
+            <div className="card col-md-9 mt-100">
                 <div className="card-content">
-                    <div className="card-body">
+                    <div className="card-body col-md-6">
                         <div className="profile">
                             <img src={teammate.avatar_url} />
                         </div>
@@ -71,6 +71,26 @@ const ListView = () => {
                             <div className="linkedin-logo">
                                 <img src={linkedInLogo} />
                             </div>
+                        </div>
+                    </div>
+
+
+                    <div className="specialties col-md-6">
+                        <div className="specialties-container">
+                            Specialties
+                        </div>
+                        <div className="specialties-tag-container">
+                            <span className="specialty-tag">Javascript</span>
+                            <span className="specialty-tag">Ruby on Rails</span>
+                        </div>
+
+                        <div className="interests-container">
+                            Interests
+                        </div>
+                        <div className="interests-tag-container">
+                            <span className="interest-tag">Pizza</span>
+                            <span className="interest-tag">Mental Health</span>
+                            <span className="interest-tag">Magic</span>
                         </div>
                     </div>
                 </div>
